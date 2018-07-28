@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qdebug.txt</file>
+    </qresource>
+</RCC>
+
