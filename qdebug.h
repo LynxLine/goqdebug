@@ -1,4 +1,3 @@
-// +build !minimal
 
 #pragma once
 
@@ -11,8 +10,15 @@
 extern "C" {
 #endif
 
-void qdebug_test();
-void* QCoreApplication_qInstallMessageHandler(void *ptr);
+struct QtCore_PackedString { char* data; long long len; };
+
+typedef void(*goqdebug_func_MessageHandler)(
+    struct QtCore_PackedString msg
+    , long long int type
+);
+
+void goqdebug_test();
+void goqdebug_InstallMessageHandler();
 
 #ifdef __cplusplus
 }
